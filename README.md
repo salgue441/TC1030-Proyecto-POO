@@ -1,8 +1,11 @@
 # Les Jabitees 
 ## Datos del estudiante
 Nombre: Carlos Rodrigo Salguero Alcantara
+  
   Matricula: A00833341
+  
   Materia: TC1030 - Programacion Orientada a Objetos
+  
   Proyecto: Les Jabitee 
 
 ## Contexto
