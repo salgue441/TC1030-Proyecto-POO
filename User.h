@@ -48,7 +48,7 @@ public:
 private:
     std::string nombre, direccion, contrasena, fecha_de_nacimiento;
     int edad, id;
-    Personaje *personajes[MAX], personaje;
+    Personaje *personajes[MAX];
 };
 
 #endif //! USER_H
