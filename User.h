@@ -32,9 +32,6 @@ public:
     void set_password(std::string);
     std::string get_password();
 
-    void set_personaje(Personaje);
-    Personaje get_personaje();
-
     /* ---- funciones ---- */
     void crea_personaje();
     void muestra_personajes();
