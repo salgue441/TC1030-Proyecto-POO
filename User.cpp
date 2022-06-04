@@ -114,13 +114,6 @@ void User::actualizar_datos(User &usuario)
 }
 
 /*
-Se encarga de trabajar con la agregacion.
-params:
-    - per: objeto de la clase personaje. La agregacion es de 1 a 1.
-*/
-void User::asigna_un_personaje(Personaje per) { personaje = per; }
-
-/*
 Se encarga de agregas mas objetos de tipo NPC al arreglo de personajes
 params:
     - p_nombre: variable de tipo string, es el nombre del objeto (personaje)
