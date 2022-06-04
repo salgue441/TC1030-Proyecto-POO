@@ -1,10 +1,10 @@
 // en caso de tener windows o linux-based system,
 // usado para la funcion sleep()
-#ifdef _WIN32
-#include <Windows.h>
-#else
-#include <unistd.h>
-#endif
+//#ifdef _WIN32
+//#include <Windows.h>
+//#else
+//#include <unistd.h>
+//#endif
 
 #include <iostream>
 #include "User.cpp"
@@ -35,7 +35,7 @@ int main()
         {
             std::cout << "\nGenerando personajes" << std::endl;
             progress_bar();
-            sleep(2);
+            //sleep(2);
 
             // break line
             std::cout << std::endl;
