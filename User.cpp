@@ -30,9 +30,6 @@ std::string User::get_direccion() { return direccion; }
 void User::set_password(std::string password) { contrasena = password; }
 std::string User::get_password() { return contrasena; }
 
-void User::set_personaje(Personaje per) { personaje = per; }
-Personaje User::get_personaje() { return personaje; }
-
 /* ---- Funciones ---- */
 /*
 Se encarga de generar los objetos (personajes iniciales) en Personajes[]
