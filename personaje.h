@@ -32,7 +32,7 @@ public:
     /* ---- Funciones ---- */
     void ataca_personaje(Personaje &, Personaje &);
     void ataque_especial(Personaje &);
-    virtual std::string muestra_datos();
+    virtual std::string muestra_datos() = 0;
     void ayudar(Personaje &, Personaje &);
 
 protected:
