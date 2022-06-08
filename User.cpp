@@ -30,6 +30,12 @@ std::string User::get_direccion() { return direccion; }
 void User::set_password(std::string password) { contrasena = password; }
 std::string User::get_password() { return contrasena; }
 
+Protagonista User::get_protagonista() { return *(Protagonista*)personajes[0]; }
+Antagonista User::get_antagonista() { return *(Antagonista*)personajes[1]; }
+Guardia User::get_guardia() { return *(Guardia*)personajes[2]; }
+// para que el arreglo empiece 0
+NPC User::get_npc(int iden) { return *(NPC*)personajes[iden + 3]; }
+
 /* ---- Funciones ---- */
 /*
 Se encarga de generar los objetos (personajes iniciales) en Personajes[]
@@ -61,7 +67,8 @@ params: no recibe parametros
 void User::muestra_personajes()
 {
     for (int i = 0; i < id; i++)
-        std::cout << personajes[i]->muestra_datos();
+        if (personajes[i] != nullptr)
+            std::cout << personajes[i]->muestra_datos();
 }
 
 /*
@@ -156,11 +163,8 @@ params:
 */
 void User::elimina_personaje(int iden)
 {
-    for (int i = 0; i < iden; i++)
-    {
-        if ((int*)iden == reinterpret_cast<int*>(&personajes[i]))
-            delete personajes[i];
-    }
+    delete personajes[iden];
+    personajes[iden] = nullptr;
 }
 
 /*

@@ -32,14 +32,22 @@ public:
     void set_password(std::string);
     std::string get_password();
 
+    // funciones para interactuar con los personajes
+    Protagonista get_protagonista();
+    Antagonista get_antagonista();
+    Guardia get_guardia();
+    NPC get_npc(int);
+
     /* ---- funciones ---- */
     void crea_personaje();
     void muestra_personajes();
     void actualizar_datos(User &);
+
     // composicion
     void agrega_guardia(std::string, double, int, std::string, double, int,
                         std::string, double);
     void agrega_npc(std::string, std::string);
+
     void elimina_personaje(int);
     std::string mostrar_datos();
 

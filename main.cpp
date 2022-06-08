@@ -35,17 +35,21 @@ int main()
         {
             std::cout << "\nGenerando personajes" << std::endl;
             progress_bar();
-            //sleep(2);
+            // sleep(2);
 
             // break line
             std::cout << std::endl;
-
             user1.crea_personaje();
 
-            std::cout << "Los personajes generados son: " << std::endl;
-            user1.muestra_personajes();
+            std::cout << "La historia comienza en el cumpleanos de: "
+                      << user1.get_antagonista().get_nombre() << std::endl
+                      << "Este dia " << user1.get_antagonista().get_nombre()
+                      << " celebra con "
+                      << user1.get_npc(0).get_nombre() << " y "
+                      << user1.get_npc(1).get_nombre()
+                      << " en el antro." << std::endl;
 
-            // agrega nuevos NPC a la historia
+                        // agrega nuevos NPC a la historia
             std::cout << "Agregando nuevos personajes: " << std::endl;
             user1.agrega_npc("Almu", "Mala Suerte");
             user1.agrega_npc("Turbina", "Dormir como nunca");
@@ -55,12 +59,16 @@ int main()
             std::cout << "Se han generado los nuevos NPC" << std::endl;
             progress_bar();
 
-            std::cout << "Los personajes generados son: ";
-            user1.muestra_personajes();
+            // std::cout << user1.get_protagonista().get_nombre() << std::endl;
+            // std::cout << user1.get_antagonista().get_nombre() << std::endl;
+            // std::cout << user1.get_guardia().get_nombre() << std::endl;
+            // std::cout << user1.get_npc(0).get_nombre() << std::endl;
 
-            std::cout << "Despues de eliminar los personajes";
+            // std::cout << "Los personajes generados son: ";
+            // user1.muestra_personajes();
+
+            // std::cout << "Despues de eliminar los personajes";
             user1.elimina_personaje(4);
-            user1.muestra_personajes();
         }
         else if (menu_opt == 2)
             mostrar_indicaciones();
@@ -77,7 +85,7 @@ params: no recibe parametros
 */
 void menu()
 {
-    std::cout << "Menu principal";
+    std::cout << "\nMenu principal";
     std::cout << "\n1. Iniciar juego \n2. Mostrar indicaciones"
               << "\n3.Salir del programa"
               << std::endl;
