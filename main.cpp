@@ -20,6 +20,7 @@ int main()
 {
     User user1;
     int menu_opt;
+    char choice_1, choice_2, choice_3, choice_4;
     bool running = true;
 
     while (running)
@@ -43,18 +44,22 @@ int main()
 
             // parte inicial de la historia
             std::cout << "La historia comienza en el cumpleanos de: "
-                      << user1.get_antagonista().get_nombre() << std::endl
-                      << "Este dia " << user1.get_antagonista().get_nombre()
+                      << user1.get_antagonista().get_nombre()
+                      << std::endl
+                      << "Este dia "
+                      << user1.get_antagonista().get_nombre()
                       << " celebra con "
                       << user1.get_npc(0).get_nombre() << " y "
                       << user1.get_npc(1).get_nombre()
                       << " en el antro." << std::endl;
 
-            std::cout << "En el antro " << user1.get_antagonista().get_nombre()
+            std::cout << "En el antro "
+                      << user1.get_antagonista().get_nombre()
                       << "Toma dos botellas de Tequila" << std::endl;
             user1.get_antagonista().set_nivel_embriaguez(20);
             std::cout << "Por lo que su nuevo nivel de embriaguez es: "
-                      << user1.get_antagonista().get_nivel_embriaguez() << std::endl;
+                      << user1.get_antagonista().get_nivel_embriaguez()
+                      << std::endl;
 
             std::cout << "---- Pasan 4 horas ----" << std::endl;
             std::cout << user1.get_antagonista().get_nombre() << ", "
@@ -72,28 +77,97 @@ int main()
                       << " con el Uber y ellos volvieron caminando"
                       << std::endl;
 
-            // agrega nuevos NPC a la historia
+            std::cout << std::endl; // break line
+
+            // perspectiva del antagonista
+            std::cout << "---- Perspectiva de Berto ---- " << std::endl;
+            std::cout << "" << std::endl;
+
+            std::cout << std::endl; // break line
+
+            // perspectiva del protagonista
+            std::cout
+                << "---- Perspectiva de Nando ---- " << std::endl
+                << "Al mismo tiempo, nuestro protagonista "
+                << user1.get_protagonista().get_nombre()
+                << " se encuentra jugando Destiny Two"
+                << " \nen su Xbox One en la sala de Jabitee."
+                << "De repente, " << user1.get_protagonista().get_nombre()
+                << " se pregunta si irse a \ndormir o seguir jugando."
+                << std::endl;
+
+            std::cout << "Seguir jugando (S/N)?" << std::endl;
+            std::cin >> choice_1;
+
+            if (choice_1 == 'S' || choice_1 == 's')
+            {
+                std::cout << user1.get_protagonista().get_nombre()
+                          << " continuo jugando Destiny por 2 horas"
+                          << std::endl;
+
+                std::cout << std::endl; // break line
+                std::cout << "Despues de 1 hora y media, "
+                          << user1.get_antagonista().get_nombre()
+                          << " ha entrado a Jabitee. Se muestra molesto"
+                          << " y se dirige hacia nuestro protagonista."
+                          << std::endl;
+
+                std::cout << user1.get_antagonista().get_nombre()
+                          << " le pregunta a "
+                          << user1.get_protagonista().get_nombre()
+                          << " si desea ir a tomar Johnny Walker al "
+                          << " rooftop a la terraza"
+                          << std::endl;
+
+                std::cout << "Deseas ir a tomar al rooftop (S/N)?";
+                std::cin >> choice_2;
+
+                if (choice_2 == 'S' || choice_2 == 's')
+                {
+                    std::cout << user1.get_protagonista().get_nombre()
+                              << " ha decidido ir a tomar al rooftop"
+                              << " con "
+                              << user1.get_antagonista().get_nombre()
+                              << "Por lo que el juego ha terminado"
+                              << std::endl;
+                }
+                else
+                {
+                    // agrega nuevos NPC a la historia,
+                    // son utilizados en el desarrollo de la historia
+                    user1.agrega_npc("Almu", "Mala Suerte");
+                    user1.agrega_npc("Turbina", "Dormir como nunca");
+                    user1.agrega_npc("El Doc", "A mimir");
+                    user1.agrega_npc("Jorge", "Desinteres");
+
+                    std::cout << std::endl; // break line
+
+                    // usado para liberar la memoria
+                    user1.elimina_personaje(4);
+                }
+            }
+            else
+            {
+                std::cout << user1.get_protagonista().get_nombre()
+                          << " ha decidido irse a dormir. "
+                          << "Por lo que el juego ha terminado"
+                          << std::endl;
+            }
+        }
+        else if (menu_opt == 2)
+            // muestra las indicaciones de la historia
+            mostrar_indicaciones();
+        else if (menu_opt == 3)
+        {
+            // muestra los personajes de la historia
+
+            // agregando los NPC extras
             user1.agrega_npc("Almu", "Mala Suerte");
             user1.agrega_npc("Turbina", "Dormir como nunca");
             user1.agrega_npc("El Doc", "A mimir");
             user1.agrega_npc("Jorge", "Desinteres");
-
-            std::cout << "Se han generado los nuevos NPC" << std::endl;
-            progress_bar();
-
-            // std::cout << user1.get_protagonista().get_nombre() << std::endl;
-            // std::cout << user1.get_antagonista().get_nombre() << std::endl;
-            // std::cout << user1.get_guardia().get_nombre() << std::endl;
-            // std::cout << user1.get_npc(0).get_nombre() << std::endl;
-
-            // std::cout << "Los personajes generados son: ";
-            // user1.muestra_personajes();
-
-            // std::cout << "Despues de eliminar los personajes";
-            user1.elimina_personaje(4);
+            user1.muestra_personajes();
         }
-        else if (menu_opt == 2)
-            mostrar_indicaciones();
         else
             running = false;
     }
@@ -109,7 +183,7 @@ void menu()
 {
     std::cout << "\nMenu principal";
     std::cout << "\n1. Iniciar juego \n2. Mostrar indicaciones"
-              << "\n3.Salir del programa"
+              << "\n3. Mostrar personajes \n4. Salir del programa"
               << std::endl;
 }
 
