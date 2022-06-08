@@ -55,7 +55,11 @@ int main()
             std::cout << "Se han generado los nuevos NPC" << std::endl;
             progress_bar();
 
-            std::cout << "A continuacion se muestran los nuevos personajes: " << std::endl;
+            std::cout << "Los personajes generados son: ";
+            user1.muestra_personajes();
+
+            std::cout << "Despues de eliminar los personajes";
+            user1.elimina_personaje(4);
             user1.muestra_personajes();
         }
         else if (menu_opt == 2)

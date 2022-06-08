@@ -148,6 +148,22 @@ void User::agrega_npc(std::string p_nombre, std::string p_habil)
 }
 
 /*
+Se encarga de eliminar los objetos que ya no son necesarios para el 
+desarrollo del juego.
+params:
+    iden: variable de tipo int, es el numero identificador del objeto a 
+    eliminar
+*/
+void User::elimina_personaje(int iden)
+{
+    for (int i = 0; i < iden; i++)
+    {
+        if ((int*)iden == reinterpret_cast<int*>(&personajes[i]))
+            delete personajes[i];
+    }
+}
+
+/*
 Se encarga de mostrar los datos de los objetos de usuario.
 params: no recibe parametros
 */

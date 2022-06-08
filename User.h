@@ -40,6 +40,7 @@ public:
     void agrega_guardia(std::string, double, int, std::string, double, int,
                         std::string, double);
     void agrega_npc(std::string, std::string);
+    void elimina_personaje(int);
     std::string mostrar_datos();
 
 private:
