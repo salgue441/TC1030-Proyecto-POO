@@ -25,7 +25,8 @@ int main()
 
     while (running)
     {
-        std::cout << "----< Bienvenido al juego Les Jabitess >----"
+        std::cout << std::endl
+                  << "BIENVENIDO AL JUEGO LES JABITESS"
                   << std::endl;
 
         menu();
@@ -59,40 +60,59 @@ int main()
             std::cout << "En el antro "
                       << user1.get_antagonista().get_nombre()
                       << " toma dos botellas de Tequila mientras disfruta"
-                      << " de la cancion Norwegian Reggaeton y muchas mas. "
-                      << user1.get_antagonista().get_nombre()
-                      << ", " << user1.get_npc(0).get_nombre() << " y "
-                      << user1.get_npc(1).get_nombre()
-                      << " "
+                      << " de la cancion Norwegian Reggaeton y otros temazos. "
                       << std::endl;
 
-            // aumenta el nivel de embriaguez
-            user1.get_antagonista().set_nivel_embriaguez(20);
-            std::cout << "Por lo que su nuevo nivel de embriaguez es: "
-                      << user1.get_antagonista().get_nivel_embriaguez()
+            // aumenta el nivel de embriaguez del antagonista
+            user1.get_antagonista()
+                .set_nivel_embriaguez(20);
+
+            std::cout
+                << user1.get_antagonista().get_nombre()
+                << ", " << user1.get_npc(0).get_nombre() << " y "
+                << user1.get_npc(1).get_nombre()
+                << " siguen disfrutando hasta las 03:30 de la manana."
+                << " A esta hora, deciden pedir que Don Noveno los"
+                << " recoga a esa hora. "
+                << std::endl;
+
+            std::cout << std::endl
+                      << "----< Don Noveno recoge al trio >----"
                       << std::endl;
 
-            std::cout << "----< Pasan 4 horas >----" << std::endl;
             std::cout << user1.get_antagonista().get_nombre() << ", "
                       << user1.get_npc(0).get_nombre() << " y "
                       << user1.get_npc(1).get_nombre()
-                      << " se dirigen en Uber hacia su hogar.";
-            std::cout << " Durante su venida, \nuna pelea ocurre entre "
+                      << "se dirigen a Jabitee para descansar. "
+                      << "Durante su venida, "
                       << user1.get_antagonista().get_nombre()
-                      << " y " << user1.get_npc(0).get_nombre()
-                      << ". Por lo que "
+                      << " empieza a molestar a "
+                      << user1.get_npc(0).get_nombre() << " y "
+                      << user1.get_npc(1).get_nombre() << ". "
+                      << "Despues de un tiempo, "
                       << user1.get_npc(0).get_nombre() << " y "
                       << user1.get_npc(1).get_nombre()
-                      << " decidieron dejar a \n"
+                      << " deciden bajarse del coche y dejar que "
+                      << "Don Noveno lleve a "
                       << user1.get_antagonista().get_nombre()
-                      << " con el Uber y ellos volvieron caminando"
+                      << " Jabitee. " << std::endl
                       << std::endl;
 
+            std::cout << "----< Mientras "
+                      << user1.get_antagonista().get_nombre()
+                      << " se dirige con Don Noveno a Jabitee, "
+                      << "algo sucede y hace que Don Noveno deje a "
+                      << user1.get_antagonista().get_nombre()
+                      << " en la entrada peatonal del Nesquick Factory"
+                      << " >----"
+                      << std::endl;
             std::cout << std::endl; // break line
 
             // perspectiva del antagonista
-            std::cout << "----< Perspectiva de Berto >---- " << std::endl;
-            std::cout << "" << std::endl;
+            std::cout << "----< Perspectiva de Berto >---- "
+                      << std::endl;
+
+                        std::cout << "" << std::endl;
 
             std::cout << std::endl; // break line
 
@@ -126,14 +146,17 @@ int main()
                           << " observa que entra pero no le presta mucha"
                           << " importancia" << std::endl;
 
-                std::cout << "----< Despues de un tiempo >----" << std::endl;
+                std::cout << "----< Despues de un tiempo >----"
+                          << std::endl;
+
                 std::cout << user1.get_antagonista().get_nombre()
                           << " le pregunta a "
                           << user1.get_protagonista().get_nombre()
                           << " si desea ir a tomar al rooftop del edificio."
                           << user1.get_protagonista().get_nombre()
                           << " oberva que la botella es de Johnny Walker "
-                          << " (A " << user1.get_protagonista().get_nombre()
+                          << " (A "
+                          << user1.get_protagonista().get_nombre()
                           << " no le gusta el Whiskey)"
                           << std::endl;
 
@@ -183,10 +206,12 @@ int main()
                           << std::endl;
             }
             break;
+
         case 2:
             // muestra las indicaciones de la historia
             mostrar_indicaciones();
             break;
+
         case 3:
             // muestra todos los personajes de la historia
             // agregando los NPC que se generan al final de la historia
@@ -198,10 +223,12 @@ int main()
             // mostrando los personajes
             user1.muestra_personajes();
             break;
+
         case 4:
             std::cout << "Se ha salido con exito!" << std::endl;
             running = false;
             break;
+
         default:
             break;
         }
@@ -277,6 +304,12 @@ void mostrar_indicaciones()
               << "\nAl momento de dar a escoger al usuario dos posibilidades, "
               << "este podra ingresar una de las dos opciones mostradas "
               << "por la terminal"
+              << std::endl
+              << std::endl;
+
+    std::cout << "Los indicadores '----< >----' muestran el paso del"
+              << " tiempo, comentarios generales o las diferentes perspectivas"
+              << " de los peresonajes. "
               << std::endl
               << std::endl;
 }
