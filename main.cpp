@@ -41,6 +41,7 @@ int main()
             std::cout << std::endl;
             user1.crea_personaje();
 
+            // parte inicial de la historia
             std::cout << "La historia comienza en el cumpleanos de: "
                       << user1.get_antagonista().get_nombre() << std::endl
                       << "Este dia " << user1.get_antagonista().get_nombre()
@@ -49,8 +50,29 @@ int main()
                       << user1.get_npc(1).get_nombre()
                       << " en el antro." << std::endl;
 
-                        // agrega nuevos NPC a la historia
-            std::cout << "Agregando nuevos personajes: " << std::endl;
+            std::cout << "En el antro " << user1.get_antagonista().get_nombre()
+                      << "Toma dos botellas de Tequila" << std::endl;
+            user1.get_antagonista().set_nivel_embriaguez(20);
+            std::cout << "Por lo que su nuevo nivel de embriaguez es: "
+                      << user1.get_antagonista().get_nivel_embriaguez() << std::endl;
+
+            std::cout << "---- Pasan 4 horas ----" << std::endl;
+            std::cout << user1.get_antagonista().get_nombre() << ", "
+                      << user1.get_npc(0).get_nombre() << " y "
+                      << user1.get_npc(1).get_nombre()
+                      << " se dirigen en Uber hacia su hogar.";
+            std::cout << " Durante su venida, \nuna pelea ocurre entre "
+                      << user1.get_antagonista().get_nombre()
+                      << " y " << user1.get_npc(0).get_nombre()
+                      << ". Por lo que "
+                      << user1.get_npc(0).get_nombre() << " y "
+                      << user1.get_npc(1).get_nombre()
+                      << " decidieron dejar a \n"
+                      << user1.get_antagonista().get_nombre()
+                      << " con el Uber y ellos volvieron caminando"
+                      << std::endl;
+
+            // agrega nuevos NPC a la historia
             user1.agrega_npc("Almu", "Mala Suerte");
             user1.agrega_npc("Turbina", "Dormir como nunca");
             user1.agrega_npc("El Doc", "A mimir");

@@ -13,7 +13,7 @@ Antagonista::Antagonista(std::string p_nombre, double p_ataque,
       nivel_embriaguez(p_nivel_embriaguez){};
 
 /* ---- Access Methods ---- */
-void Antagonista::set_nivel_embriaguez(int borracho) { borracho = nivel_embriaguez; }
+void Antagonista::set_nivel_embriaguez(int borracho) { nivel_embriaguez = borracho; }
 int Antagonista::get_nivel_embriaguez() { return nivel_embriaguez; }
 
 /* ---- Funciones ---- */
