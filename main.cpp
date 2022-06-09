@@ -112,7 +112,7 @@ int main()
             std::cout << "----< Perspectiva de Berto >---- "
                       << std::endl;
 
-                        std::cout << "" << std::endl;
+            std::cout << "" << std::endl;
 
             std::cout << std::endl; // break line
 
@@ -144,7 +144,8 @@ int main()
                           << "\n"
                           << user1.get_protagonista().get_nombre()
                           << " observa que entra pero no le presta mucha"
-                          << " importancia" << std::endl;
+                          << " importancia" << std::endl
+                          << std::endl;
 
                 std::cout << "----< Despues de un tiempo >----"
                           << std::endl;
@@ -181,9 +182,18 @@ int main()
                               << user1.get_antagonista().get_nombre()
                               << " ha decidido seguir tomando mientras observa a "
                               << user1.get_protagonista().get_nombre()
-                              << " jugar Xbox." << std::endl;
+                              << " jugar Xbox." << std::endl
+                              << std::endl;
 
-                    user1.get_antagonista().get_nivel_embriaguez() + 10;
+                    user1.get_antagonista().set_nivel_embriaguez(30);
+
+                    std::cout << "----< Mientras "
+                              << user1.get_protagonista().get_nombre()
+                              << " continua jugando Xbox, "
+                              << user1.get_antagonista().get_nombre()
+                              << " sigue tomando"
+                              << ">----" << std::endl;
+                    user1.get_antagonista().set_nivel_embriaguez(50);
 
                     // agrega nuevos NPC a la historia,
                     // son utilizados en el desarrollo de la historia
