@@ -225,13 +225,15 @@ int main()
         case 3:
             // muestra todos los personajes de la historia
             // agregando los NPC que se generan al final de la historia
-            user1.agrega_npc("Almu", "Mala Suerte");
-            user1.agrega_npc("Turbina", "Dormir como nunca");
-            user1.agrega_npc("El Doc", "A mimir");
-            user1.agrega_npc("Jorge", "Desinteres");
+            // user1.agrega_npc("Almu", "Mala Suerte");
+            // user1.agrega_npc("Turbina", "Dormir como nunca");
+            // user1.agrega_npc("El Doc", "A mimir");
+            // user1.agrega_npc("Jorge", "Desinteres");
 
             // mostrando los personajes
             user1.muestra_personajes();
+            user1.elimina_personajes_todos();
+
             break;
 
         case 4:
