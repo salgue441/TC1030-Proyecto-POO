@@ -167,6 +167,15 @@ void User::elimina_personaje(int iden)
     personajes[iden] = nullptr;
 }
 
+void User::elimina_personajes_todos()
+{
+    for (int i = 0; i < id; i++)
+    {
+        delete personajes[i];
+        personajes[i] = nullptr;
+    }
+}
+
 /*
 Se encarga de mostrar los datos de los objetos de usuario.
 params: no recibe parametros

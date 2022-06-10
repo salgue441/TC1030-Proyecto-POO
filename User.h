@@ -49,6 +49,7 @@ public:
     void agrega_npc(std::string, std::string);
 
     void elimina_personaje(int);
+    void elimina_personajes_todos();
     std::string mostrar_datos();
 
 private:
