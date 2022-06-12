@@ -106,15 +106,8 @@ int main()
                       << " en la entrada peatonal del Nesquick Factory"
                       << " >----"
                       << std::endl;
-            std::cout << std::endl; // break line
 
-            // perspectiva del antagonista
-            std::cout << "----< Perspectiva de Berto >---- "
-                      << std::endl;
-
-            std::cout << "" << std::endl;
-
-            std::cout << std::endl; // break line
+            std::cout << std::endl;
 
             // perspectiva del protagonista
             std::cout
@@ -127,7 +120,7 @@ int main()
                 << " se pregunta si irse a \ndormir o seguir jugando."
                 << std::endl;
 
-            std::cout << "Seguir jugando (S/N)?" << std::endl;
+            std::cout << "Seguir jugando (S/N)? ";
             std::cin >> choice_1;
 
             if (choice_1 == 'S' || choice_1 == 's')
@@ -161,7 +154,7 @@ int main()
                           << " no le gusta el Whiskey)"
                           << std::endl;
 
-                std::cout << "Deseas ir a tomar al rooftop (S/N)?";
+                std::cout << "\nDeseas ir a tomar al rooftop (S/N)?";
                 std::cin >> choice_2;
 
                 if (choice_2 == 'S' || choice_2 == 's')
@@ -191,9 +184,29 @@ int main()
                               << user1.get_protagonista().get_nombre()
                               << " continua jugando Xbox, "
                               << user1.get_antagonista().get_nombre()
-                              << " sigue tomando"
-                              << ">----" << std::endl;
+                              << " sigue tomando."
+                              << " >----" << std::endl;
                     user1.get_antagonista().set_nivel_embriaguez(50);
+
+                    std::cout << "Despues de un rato, "
+                              << user1.get_protagonista().get_nombre()
+                              << " decide ir a lavar sus trastes a la"
+                              << " cocina del Departamento."
+                              << std::endl;
+
+                    std::cout << user1.get_protagonista().get_nombre()
+                              << " camina hacia la cocina y nota que "
+                              << user1.get_antagonista().get_nombre()
+                              << " lo sigue." << std::endl
+                              << std::endl;
+
+                    std::cout << "----< Mientras caminaban hacia "
+                              << "la cocina, "
+                              << user1.get_antagonista().get_nombre()
+                              << " intenta llenar el vaso de "
+                              << user1.get_protagonista().get_nombre()
+                              << " con whiskey, pero falla retundamente."
+                              << std::endl;
 
                     // agrega nuevos NPC a la historia,
                     // son utilizados en el desarrollo de la historia
@@ -203,9 +216,6 @@ int main()
                     user1.agrega_npc("Jorge", "Desinteres");
 
                     std::cout << std::endl; // break line
-
-                    // usado para liberar la memoria
-                    user1.elimina_personaje(4);
                 }
             }
             else
@@ -243,8 +253,8 @@ int main()
 
         default:
             break;
-        }
-    }
+        } // fin del switch loop
+    }     // fin del while loop
     return 0;
 }
 
