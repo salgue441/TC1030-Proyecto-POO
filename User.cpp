@@ -174,6 +174,8 @@ void User::elimina_personajes_todos()
         delete personajes[i];
         personajes[i] = nullptr;
     }
+
+    id = 0; // index reset
 }
 
 /*
