@@ -64,8 +64,7 @@ int main()
                       << std::endl;
 
             // aumenta el nivel de embriaguez del antagonista
-            user1.get_antagonista()
-                .set_nivel_embriaguez(20);
+            user1.get_antagonista().set_nivel_embriaguez(15);
 
             std::cout
                 << user1.get_antagonista().get_nombre()
