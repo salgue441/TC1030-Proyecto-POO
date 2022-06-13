@@ -168,12 +168,14 @@ int main()
                 }
                 else
                 {
-                    std::cout << user1.get_protagonista().get_nombre() << " y "
+                    std::cout << user1.get_protagonista().get_nombre()
+                              << " y "
                               << user1.get_antagonista().get_nombre()
                               << " se quedan en la sala de Jabitee. "
                               << std::endl
                               << user1.get_antagonista().get_nombre()
-                              << " ha decidido seguir tomando mientras observa a "
+                              << " ha decidido seguir tomando mientras"
+                              << " observa a "
                               << user1.get_protagonista().get_nombre()
                               << " jugar Xbox." << std::endl
                               << std::endl;
