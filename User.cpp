@@ -165,6 +165,7 @@ void User::elimina_personaje(int iden)
 {
     delete personajes[iden];
     personajes[iden] = nullptr;
+    id = id - iden;
 }
 
 void User::elimina_personajes_todos()
