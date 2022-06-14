@@ -1,6 +1,12 @@
 // en caso de tener windows o linux-based system,
 // usado para la funcion sleep()
-#ifdef _WIN32
+/*
+Este define es utilizado para que en la funcion max()
+no pida parametros
+*/
+#define NOMINMAX
+
+#ifdef _WIND32
 #include <Windows.h>
 #else
 #include <unistd.h>
@@ -33,13 +39,19 @@ int main()
         menu();
         std::cout << "Ingresa el numero de la opcion que deseas realizar: ";
 
+        /*
+        Se encarga de controlar el input del usuario. Si el valor no es numerico,
+        muestra al usuario que su entranda no es valida y les pide ingresar
+        una nueva entrada. Evita que el programa cicle infinitamente si el
+        usuario ingresa un tipo de dato que no es el correcto.
+        */
         while (!(std::cin >> menu_opt))
         {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
                             '\n');
 
-            std::cout << "Invalid entry. Try Again" << std::endl;
+            std::cout << "Entrada invalida, intente de nuevo." << std::endl;
         }
 
         switch (menu_opt)
