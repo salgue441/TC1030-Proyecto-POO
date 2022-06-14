@@ -1,12 +1,13 @@
-// en caso de tener windows o linux-based system,
-// usado para la funcion sleep()
 /*
-Este define es utilizado para que en la funcion max()
-no pida parametros
+Escoge la libreria correspondiente para dispositivos con sistema operativo
+Windows (_WIN32) y linux-based systems para utilizar la funcion de sleep().
+Al entrar en sistemas con windows, hace un define de NOMINMAX para que la
+funcion max() no reciba parametros e incluye la libreria correspondiente
+para sleep() en windows. En el caso de ser un linux-based system, incluye
+la libreria correspondiente para sleep() y no se necesita definir NOMINMAX
 */
-#define NOMINMAX
-
 #ifdef _WIN32
+#define NOMINMAX
 #include <Windows.h>
 #else
 #include <unistd.h>
@@ -51,7 +52,7 @@ int main()
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
                             '\n');
 
-            std::cout << "Entrada invalida, intente de nuevo.";
+            std::cout << "Entrada invalida, intenta de nuevo: ";
         }
 
         switch (menu_opt)
