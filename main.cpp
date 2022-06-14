@@ -6,7 +6,7 @@ no pida parametros
 */
 #define NOMINMAX
 
-#ifdef _WIND32
+#ifdef _WIN32
 #include <Windows.h>
 #else
 #include <unistd.h>
@@ -51,7 +51,7 @@ int main()
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
                             '\n');
 
-            std::cout << "Entrada invalida, intente de nuevo." << std::endl;
+            std::cout << "Entrada invalida, intente de nuevo.";
         }
 
         switch (menu_opt)
@@ -295,7 +295,8 @@ void menu()
 /*
 Se encarga de generar una progress bar sencilla para mostrar 'visualmente'
 al usuario cuando se generan los personajes. Basado en la solucion con
-mas upvotes de
+mas upvotes de How to display a progress indicator in pure C/C++
+(cout/printf)? (2013, January 26). Stack Overflow.
 https://stackoverflow.com/questions/14539867/how-to-display-a-progress-indicator-in-pure-c-c-cout-printf
 params: no recibe parametros
 */
@@ -331,7 +332,7 @@ void progress_bar()
 
 /*
 Se encarga de mostrar las instrucciones principales del programa al usuario
-params: no recibe parametros
+params: no recibe parametro.
 */
 void mostrar_indicaciones()
 {
