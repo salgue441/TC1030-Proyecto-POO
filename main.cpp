@@ -185,6 +185,9 @@ int main()
                               << user1.get_antagonista().get_nombre()
                               << "Por lo que el juego ha terminado"
                               << std::endl;
+
+                    // limpiando la memoria
+                    user1.elimina_personajes_todos();
                 }
                 else
                 {
@@ -237,7 +240,7 @@ int main()
                     user1.agrega_npc("El Doc", "A mimir");
                     user1.agrega_npc("Jorge", "Desinteres");
 
-                    std::cout << std::endl; // break line
+                    user1.elimina_personajes_todos();
                 }
             }
             else
@@ -246,6 +249,9 @@ int main()
                           << " ha decidido irse a dormir. "
                           << "Por lo que el juego ha terminado"
                           << std::endl;
+
+                // limpiando la memoria
+                user1.elimina_personajes_todos();
             }
             break;
 
