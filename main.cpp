@@ -7,6 +7,7 @@
 #endif
 
 #include <iostream>
+#include <limits>
 #include "User.cpp"
 
 // funciones utilizadas en main
@@ -31,7 +32,15 @@ int main()
 
         menu();
         std::cout << "Ingresa el numero de la opcion que deseas realizar: ";
-        std::cin >> menu_opt;
+
+        while (!(std::cin >> menu_opt))
+        {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
+                            '\n');
+
+            std::cout << "Invalid entry. Try Again" << std::endl;
+        }
 
         switch (menu_opt)
         {
