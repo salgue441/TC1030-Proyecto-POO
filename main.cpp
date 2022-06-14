@@ -251,7 +251,7 @@ int main()
                           << "Por lo que el juego ha terminado"
                           << std::endl;
 
-                // limpiando la memoria
+                // limpiando la memoria utiiizda
                 user1.elimina_personajes_todos();
             }
             break;
