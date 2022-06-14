@@ -269,9 +269,11 @@ int main()
             user1.agrega_npc("El Doc", "A mimir");
             user1.agrega_npc("Jorge", "Desinteres");
 
-            // mostrando todos los personajes
+            // creando & mostrando todos los personajes
             user1.crea_personaje();
             user1.muestra_personajes();
+
+            // limpiando la memoria utilizada
             user1.elimina_personajes_todos();
             break;
 
