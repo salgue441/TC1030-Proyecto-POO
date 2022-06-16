@@ -136,7 +136,7 @@ int main()
                       << " >----"
                       << std::endl;
 
-            std::cout << std::endl;
+            std::cout << std::endl; // break line
 
             // perspectiva del protagonista
             std::cout
@@ -159,6 +159,7 @@ int main()
                           << std::endl;
 
                 std::cout << std::endl; // break line
+
                 std::cout << "Despues de 1 hora y media, "
                           << user1.get_antagonista().get_nombre()
                           << " ha entrado a Jabitee. Se muestra molesto"
@@ -188,7 +189,7 @@ int main()
                           << " no le gusta el Whiskey)"
                           << std::endl;
 
-                std::cout << "\nDeseas ir a tomar al rooftop (S/N)?";
+                std::cout << "\nDeseas ir a tomar al rooftop (S/N)? ";
                 std::cin >> choice_2;
 
                 if (choice_2 == 'S' || choice_2 == 's')
@@ -275,6 +276,7 @@ int main()
                               << "los dientes y se acuesta. "
                               << std::endl;
 
+                    std::cout << std::endl; // break line
                     std::cout << "----< Pasan 15 minutos y "
                               << user1.get_protagonista().get_nombre()
                               << " escucha que alguien toca a la puerta de "
@@ -287,6 +289,28 @@ int main()
                               << user1.get_protagonista().get_nombre()
                               << " para controlar a "
                               << user1.get_antagonista().get_nombre()
+                              << ">----"
+                              << std::endl;
+
+                    std::cout << user1.get_protagonista().get_nombre()
+                              << " y" << user1.get_guardia().get_nombre()
+                              << "llegan al cuarto de "
+                              << user1.get_antagonista().get_nombre()
+                              << ". "
+                              << user1.get_antagonista().get_nombre()
+                              << " abre la puerta y los saluda"
+                              << std::endl;
+
+                    std::cout << "(Se estan un rato en su habitacion,"
+                              << " despues de 30 minutos "
+                              << user1.get_protagonista().get_nombre()
+                              << " y" << user1.get_guardia().get_nombre()
+                              << " se retiran de la habitacion.)"
+                              << std::endl;
+
+                    std::cout << "----< "
+                              << user1.get_antagonista().get_nombre()
+                              << " sigue haciendo desmadre, "
                               << std::endl;
 
                     // agrega nuevos NPC a la historia,
