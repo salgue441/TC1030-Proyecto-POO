@@ -21,8 +21,6 @@ la libreria correspondiente para sleep() y no se necesita definir NOMINMAX
 void menu();
 void progress_bar();
 void mostrar_indicaciones();
-void sign_up();
-std::string log_in();
 
 int main()
 {
@@ -119,6 +117,16 @@ int main()
                       << " Jabitee. " << std::endl
                       << std::endl;
 
+            std::cout << "Despues de 15 minutos, "
+                      << user1.get_npc(0).get_nombre() << " y "
+                      << user1.get_npc(1).get_nombre()
+                      << "llegan a Jabitee. Saludan a "
+                      << user1.get_protagonista().get_nombre()
+                      << " y se despiden (se fueron a dormir). "
+                      << std::endl;
+
+            std::cout << std::endl; // break line
+
             std::cout << "----< Mientras "
                       << user1.get_antagonista().get_nombre()
                       << " se dirige con Don Noveno a Jabitee, "
@@ -158,7 +166,13 @@ int main()
                           << "\n"
                           << user1.get_protagonista().get_nombre()
                           << " observa que entra pero no le presta mucha"
-                          << " importancia" << std::endl
+                          << " importancia. "
+                          << "En el mismo instante, "
+                          << user1.get_antagonista().get_nombre()
+                          << " se queda sentado cerca de "
+                          << user1.get_protagonista().get_nombre()
+                          << "."
+                          << std::endl
                           << std::endl;
 
                 std::cout << "----< Despues de un tiempo >----"
@@ -167,7 +181,7 @@ int main()
                 std::cout << user1.get_antagonista().get_nombre()
                           << " le pregunta a "
                           << user1.get_protagonista().get_nombre()
-                          << " si desea ir a tomar al rooftop del edificio."
+                          << " si desea ir a tomar al rooftop del edificio. "
                           << user1.get_protagonista().get_nombre()
                           << " oberva que la botella es de Johnny Walker "
                           << " (A "
@@ -218,9 +232,7 @@ int main()
                               << user1.get_protagonista().get_nombre()
                               << " decide ir a lavar sus trastes a la"
                               << " cocina del Departamento."
-                              << std::endl;
-
-                    std::cout << user1.get_protagonista().get_nombre()
+                              << user1.get_protagonista().get_nombre()
                               << " camina hacia la cocina y nota que "
                               << user1.get_antagonista().get_nombre()
                               << " lo sigue." << std::endl
@@ -232,6 +244,30 @@ int main()
                               << " intenta llenar el vaso de "
                               << user1.get_protagonista().get_nombre()
                               << " con whiskey, pero falla retundamente."
+                              << std::endl;
+
+                    std::cout << user1.get_protagonista().get_nombre()
+                              << " empieza a limpiar sus trastes. Mientras "
+                              << user1.get_protagonista().get_nombre()
+                              << " lava sus trastes, "
+                              << user1.get_antagonista().get_nombre()
+                              << " empieza a bendecir las paredes de la cocina"
+                              << " y del comedor con el Whiskey. "
+                              << std::endl;
+
+                    std::cout << "Al ver esto, "
+                              << user1.get_protagonista().get_nombre()
+                              << " decide llevar a "
+                              << user1.get_antagonista().get_nombre()
+                              << " su cuarto para evitar que haga mas "
+                              << "danio al lugar" << std::endl;
+
+                    std::cout << std::endl; // break line
+                    std::cout << "----< Ambos llegan al cuarto de "
+                              << user1.get_antagonista().get_nombre()
+                              << " por lo que "
+                              << user1.get_protagonista().get_nombre()
+                              << " se retira su habitacion >----"
                               << std::endl;
 
                     // agrega nuevos NPC a la historia,
@@ -264,13 +300,15 @@ int main()
         case 3:
             // muestra todos los personajes de la historia
             // agregando los NPC que se generan al final de la historia
+
+            // creando & mostrando todos los personajes
+            user1.crea_personaje();
             user1.agrega_npc("Almu", "Mala Suerte");
             user1.agrega_npc("Turbina", "Dormir como nunca");
             user1.agrega_npc("El Doc", "A mimir");
             user1.agrega_npc("Jorge", "Desinteres");
 
-            // creando & mostrando todos los personajes
-            user1.crea_personaje();
+            // mostrando los personajes
             user1.muestra_personajes();
 
             // limpiando la memoria utilizada
@@ -279,6 +317,7 @@ int main()
 
         case 4:
             std::cout << "Se ha salido con exito!" << std::endl;
+            user1.elimina_personajes_todos(); // limpiando la memoria utilizada
             running = false;
             break;
 
@@ -367,70 +406,3 @@ void mostrar_indicaciones()
               << std::endl
               << std::endl;
 }
-
-/* ---- < Las siguientes funciones siguen en proceso > ---- */
-/*
-Funcion que se encarga de crear un usuario y contrasena.
-Al tener los datos, los guarda en el archivo de texto user.txt para
-ser leido por la funcion log_in();
-params: no tiene parametros.
-*/
-// void sign_up()
-// {
-//   std::ofstream usuario_file;
-//   std::string username, contra, birth;
-//   int age;
-
-//   std::cout << "Sign Up" << std::endl;
-//   std::cout << "Username: ";
-//   std::cin.ignore();
-//   std::getline(std::cin, username);
-
-//   std::cout << "Age: ";
-//   std::cin >> age;
-
-//   std::cout << "Fecha de nacimiento: ";
-//   std::cin.ignore();
-//   std::getline(std::cin, birth);
-
-//   std::cout << "Contrasena: ";
-//   std::cin.ignore();
-//   std::getline(std::cin, contra);
-
-//   usuario_file.open("usuario.txt", std::ios::in);
-//   usuario_file << username << std::endl
-//                << contra << std::endl;
-//   usuario_file.close();
-
-//   User user1(username, age, birth, contra);
-// }
-
-/*
-Funcion que se encarga de leer los datos del usuario y los compara
-con los datos almacenados en el archivo de texto user.txt.
-params: no tiene parametros.
-*/
-// std::string log_in()
-// {
-//   /*
-//   estructura local. Usada para retornar mas de un valor de la
-//   misma funcion.
-//   */
-//   struct return_values
-//   {
-//     std::string username, password;
-//   };
-
-//   std::string local_username, local_password;
-
-//   std::cout << "---- Log In ----" << std::endl;
-//   std::cout << "Username: ";
-//   std::cin.ignore();
-//   std::getline(std::cin, local_username);
-
-//   std::cout << "Password: ";
-//   std::cin.ignore();
-//   std::getline(std::cin, local_password);
-
-//   return return_values{local_username, local_password};
-// }
