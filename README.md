@@ -28,6 +28,6 @@ El programa solo corre en la terminal y esta hecho con el lenguaje
   correr en linux-based systems con "./a.out" (aplica en MacOs) y
   para windows con "a.exe".
 ```
-g++ main.cpp -o main
+g++ main.cpp
 ./a.out
 ```
