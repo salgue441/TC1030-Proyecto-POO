@@ -1,5 +1,14 @@
+# contiene el token para git auth
 token.txt
+
+# contiene los archivos utlizados con debugging
 .vscode/
+
+# el output generado no es necesario en github
 a.out
+
+# main es el archivo de debugging generado al hacer debugging en el codigo
 main
+
+# contiene el archivo .docx con el enlace del repositorio
 Entrega/
