@@ -16,10 +16,7 @@ public:
     int get_nivel_embriaguez();
 
     /* ---- Funciones ---- */
-    void danio_agregado(Antagonista &);
     std::string bendecir_el_lugar();
-    void invitar_a_tomar();
-    void tomar(double, Antagonista &);
     std::string muestra_datos();
 
 private:

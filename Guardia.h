@@ -18,7 +18,6 @@ public:
 
     /* ---- Funciones ---- */
     void llamar_a_policia();
-    void pedir_ayuda(Personaje &, Personaje &);
     std::string muestra_datos();
 
 private:

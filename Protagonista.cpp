@@ -62,36 +62,3 @@ std::string Protagonista::recoger_xbox()
 
     return xbox.str();
 };
-
-/*
-Se encarga de multiplicar el nivel de paciencia inicial del protagonista
-por 0.1.
-params: no recibe parametros
-*/
-void Protagonista::disminuir_paciencia(Protagonista &personaje)
-{
-    float nueva_paciencia = paciencia * 0.1;
-    personaje.set_paciencia(nueva_paciencia);
-}
-
-/*
-Se encarga de mejorar el ataque de otro personaje.
-params:
-    - recepctor: referencia a un objeto de tipo personaje, es el objeto
-        que recibe la merjora de ataque
-*/
-void Protagonista::ayuda(Personaje &receptor)
-{
-    float nuevo_danio, danio_original;
-    bool usado = false;
-
-    danio_original = receptor.get_ataque();
-
-    nuevo_danio = receptor.get_ataque() * 3;
-
-    if (usado == false)
-    {
-        receptor.set_ataque(nuevo_danio);
-        usado = true;
-    }
-}

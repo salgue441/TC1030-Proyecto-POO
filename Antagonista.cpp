@@ -18,62 +18,12 @@ int Antagonista::get_nivel_embriaguez() { return nivel_embriaguez; }
 
 /* ---- Funciones ---- */
 /*
-Se encarga de modificar el danio del antagonista solo si su nivel de
-embriaguez es mayor que 40.
-params:
-    - ant: referencia a objeto de tipo antagonista
-*/
-void Antagonista::danio_agregado(Antagonista &ant)
-{
-    double extra_danio = 10, nuevo_total;
-
-    if (ant.get_nivel_embriaguez() > 40)
-    {
-        nuevo_total = ataque * 10;
-        ant.set_ataque(nuevo_total);
-    }
-}
-
-/*
 Se encarga de bendecir el lugar de residencia
 params: no recibe parametros
 */
 std::string Antagonista::bendecir_el_lugar()
 {
     return "El antagonista ha bendecido el lugar";
-}
-
-/*
-Se encarga de preguntar al usuario si se quiere unir a tomar
-params: no recibe parametros
-*/
-void Antagonista::invitar_a_tomar()
-{
-    char opt;
-    std::cout << "Quieres tomar? (S/N)";
-    std::cin >> opt;
-
-    if (opt == 'S' || opt == 's')
-    {
-        std::cout << "Te has unido a tomar" << std::endl;
-    }
-    else
-        std::cout << "No te has unido a tomar" << std::endl;
-}
-
-/*
-Se encarga de modificar el nivel de embriaguez del antagonista
-params:
-    - bebida: tipo de dato 'double'.
-    - ant: referencia a objeto de tipo Antagonista. Usado para modificar
-        el valor de nivel de embriaguez
-*/
-void Antagonista::tomar(double bebida, Antagonista &ant)
-{
-    double multiplicador = bebida / 7.5, nuevo_nivel;
-
-    nuevo_nivel = ant.get_nivel_embriaguez() * multiplicador;
-    ant.set_nivel_embriaguez(nuevo_nivel);
 }
 
 /*

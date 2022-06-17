@@ -31,24 +31,6 @@ void Guardia::llamar_a_policia()
 }
 
 /*
-Se encarga de pedir ayuda al protagonista de la historia para mejorar sus
-habilidades. Al haber llamado esta funcion, permite mejorar sus habilidades
-params:
-    - protagonista: referencia a un objeto de clase protagonista.
-*/
-void Guardia::pedir_ayuda(Personaje &protagonista, Personaje &guardia)
-{
-    char op_ayuda;
-    std::cout << "Guardia ha pedido ayuda ..." << std::endl;
-    std::cout << "Deseas ayudar (S/N)?" << std::endl;
-
-    if (op_ayuda == 'S' || op_ayuda == 's')
-        protagonista.ayudar(guardia);
-    else
-        std::cout << "Has decidido no ayudar" << std::endl;
-}
-
-/*
 Se encarga de visualizar todos los datos del objeto personaje seleccionado.
 params: no recibe parametros
 */

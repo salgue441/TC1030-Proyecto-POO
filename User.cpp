@@ -4,32 +4,9 @@
 
 /* ---- Constructor ---- */
 // default
-User::User() : nombre("None"), fecha_de_nacimiento("None"),
-               edad(18), direccion("None"), contrasena("None"){};
-
-// para comparar en la funcion log_in()
-User::User(std::string p_name, std::string p_pass)
-    : nombre(p_name), contrasena(p_pass){};
-
-// creacion de objetos
-User::User(std::string p_name, int p_age, std::string p_pass,
-           std::string nacimiento) : nombre(p_name), edad(p_age),
-                                     contrasena(p_pass),
-                                     fecha_de_nacimiento(nacimiento){};
+User::User(){};
 
 /* ---- Access Methods ---- */
-void User::set_name(std::string nom) { nombre = nom; }
-std::string User::get_nombre() { return nombre; }
-
-int User::get_edad() { return edad; }
-std::string User::get_fecha_de_nacimiento() { return fecha_de_nacimiento; }
-
-void User::set_direccion(std::string dir) { direccion = dir; }
-std::string User::get_direccion() { return direccion; }
-
-void User::set_password(std::string password) { contrasena = password; }
-std::string User::get_password() { return contrasena; }
-
 /*
 Son referencias para no generar una copia del objeto y modificar los valores
 existentes de la clase. En get_npc() se hace un iden + 3 para empezar a contar
@@ -76,52 +53,6 @@ void User::muestra_personajes()
 }
 
 /*
-Se encarga de editar los valores guardados en los objetos de usuario
-params:
-    - usuario: referencia a objeto de tipo usuario.
-    Se modifican los valores guardados dentre de este objeto
-*/
-void User::actualizar_datos(User &usuario)
-{
-    int opt;
-    std::string new_name, new_direccion, new_password;
-
-    std::cout << "Que elemento quieres modificar: "
-              << "\n1. Nombre"
-              << "\n2. Direccion"
-              << "\n3. Contrasena"
-              << std::endl;
-    std::cin >> opt;
-
-    switch (opt)
-    {
-    case 1: // nombre
-        std::cout << "Ingresa el nuevo nombre: ";
-        std::cin.ignore();
-        std::getline(std::cin, new_name);
-        usuario.set_name(new_name);
-        break;
-
-    case 2: // direccion
-        std::cout << "Ingresa la nueva direccion: ";
-        std::cin.ignore();
-        std::getline(std::cin, new_direccion);
-        usuario.set_direccion(new_direccion);
-        break;
-
-    case 3: // contrasena
-        std::cout << "Ingresa la nueva contrasena: ";
-        std::cin.ignore();
-        std::getline(std::cin, new_password);
-        usuario.set_password(new_password);
-        break;
-
-    default:
-        break;
-    } // fin del switch
-}
-
-/*
 Se encarga de agregas mas objetos de tipo NPC al arreglo de personajes
 params:
     - p_nombre: variable de tipo string, es el nombre del objeto (personaje)
@@ -158,20 +89,6 @@ void User::agrega_npc(std::string p_nombre, std::string p_habil)
     id++;
 }
 
-/*
-Se encarga de eliminar los objetos que ya no son necesarios para el
-desarrollo del juego.
-params:
-    iden: variable de tipo int, es el numero identificador del objeto a
-    eliminar
-*/
-void User::elimina_personaje(int iden)
-{
-    delete personajes[iden];
-    personajes[iden] = nullptr;
-    id = id - iden;
-}
-
 void User::elimina_personajes_todos()
 {
     for (int i = 0; i < id; i++)
@@ -181,23 +98,4 @@ void User::elimina_personajes_todos()
     }
 
     id = 0; // index reset
-}
-
-/*
-Se encarga de mostrar los datos de los objetos de usuario.
-params: no recibe parametros
-*/
-std::string User::mostrar_datos()
-{
-    std::stringstream datos;
-
-    datos << "Datos del usuario: "
-          << "\nNombre: " << nombre
-          << "\nDireccion: " << direccion
-          << "\nFecha de nacimiento" << fecha_de_nacimiento
-          << "\nEdad: " << edad
-          << std::endl
-          << std::endl;
-
-    return datos.str();
 }

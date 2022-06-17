@@ -17,8 +17,6 @@ public:
     /* ---- Funciones ---- */
     std::string muestra_datos();
     std::string recoger_xbox();
-    void disminuir_paciencia(Protagonista &);
-    void ayuda(Personaje &);
 
 private:
     int paciencia;
