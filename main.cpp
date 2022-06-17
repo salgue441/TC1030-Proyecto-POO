@@ -503,6 +503,16 @@ int main()
                                   << user1.get_npc(1).get_nombre()
                                   << " para que abtra la puerta y los deje entrar"
                                   << std::endl;
+
+                        std::cout << std::endl; // break line
+
+                        user1.agrega_npc("Nitales", "Desinteres");
+                        std::cout << "----< Y al mismo tiempo, "
+                                  << user1.get_npc(6).get_nombre()
+                                  << " pide a "
+                                  << user1.get_guardia().get_nombre()
+                                  << " que le pida un taxi. "
+                                  << std::endl;
                     }
                     else
                     {
@@ -525,11 +535,10 @@ int main()
 
                     } // fin del condicional de choice_3
 
-                    user1.agrega_npc("Nitales", "Desinteres");
-
+                    // limpiando la memoria
                     user1.elimina_personajes_todos();
                 } // fin del condicional de choice_2
-            }
+            }     // fin del condicional de choice_1
             else
             {
                 std::cout << user1.get_protagonista().get_nombre()
