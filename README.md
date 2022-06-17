@@ -25,9 +25,9 @@ El programa cuenta la historia de un estudiante de un sabado en la
 ## Como correr el programa
 El programa solo corre en la terminal y esta hecho con el lenguaje
   de programacion C++. Compilar el programa con: g++ main.cpp,
-  correr en linux-based systems con "./a.out" (aplica en MacOs) y
+  correr en linux-based systems con "./app" (aplica en MacOs) y
   para windows con "a.exe".
 ```
-g++ main.cpp
-./a.out
+g++ main.cpp -o app
+./app
 ```
