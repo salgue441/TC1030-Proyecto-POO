@@ -33,10 +33,10 @@ public:
     std::string get_password();
 
     // funciones para interactuar con los personajes
-    Protagonista get_protagonista();
-    Antagonista get_antagonista();
-    Guardia get_guardia();
-    NPC get_npc(int);
+    Protagonista &get_protagonista();
+    Antagonista &get_antagonista();
+    Guardia &get_guardia();
+    NPC &get_npc(int);
 
     /* ---- funciones ---- */
     void crea_personaje();

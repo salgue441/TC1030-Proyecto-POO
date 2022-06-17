@@ -2,6 +2,7 @@
 #define PERSONAJE_H
 
 #include <string>
+#include <iostream>
 #include <sstream>
 
 class Personaje

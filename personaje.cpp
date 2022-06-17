@@ -48,7 +48,7 @@ double Personaje::get_ataque() { return ataque; }
 int Personaje::get_defensa() { return defensa; }
 double Personaje::get_danio_habilidad() { return danio_habilidad; }
 
-void Personaje::set_vida(int p_vida) { p_vida = vida; }
+void Personaje::set_vida(int p_vida) { vida = p_vida; }
 int Personaje::get_vida() { return vida; }
 
 /* ---- Funciones ---- */

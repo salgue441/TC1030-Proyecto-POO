@@ -302,26 +302,96 @@ int main()
                               << std::endl;
 
                     std::cout << "(Se estan un rato en su habitacion,"
-                              << " despues de 30 minutos "
+                              << " despues de 40 minutos "
                               << user1.get_protagonista().get_nombre()
                               << " y" << user1.get_guardia().get_nombre()
                               << " se retiran de la habitacion.)"
                               << std::endl;
 
-                    std::cout << "----< "
+                    std::cout << std::endl; // break line
+
+                    // agrega nuevos NPCs
+                    user1.agrega_npc("El Doc", "A mimir");
+                    user1.agrega_npc("The Cooler Dan", "Fuga");
+
+                    std::cout << "----< Perspectiva del Doc >----" << std::endl;
+                    std::cout << user1.get_npc(2).get_nombre()
+                              << " escucha un escandalo en el pasillo. "
+                              << user1.get_npc(2).get_nombre()
+                              << " escucho que "
                               << user1.get_antagonista().get_nombre()
-                              << " sigue haciendo desmadre, "
+                              << " buscaba a "
+                              << user1.get_npc(3).get_nombre()
+                              << " y le decia \"Are you here or are you in "
+                              << "la culpable? \""
+                              << "Tambien, escucho como "
+                              << user1.get_antagonista().get_nombre()
+                              << " golpeaba su puerta. Tambien escucho a "
+                              << user1.get_protagonista().get_nombre() << " y "
+                              << user1.get_guardia().get_nombre()
+                              << " hablar con "
+                              << user1.get_antagonista().get_nombre()
+                              << " por 40 minutos." << std::endl;
+
+                    std::cout << std::endl; // break line
+
+                    std::cout
+                        << "----< Volviendo a la historia principal,  "
+                        << user1.get_antagonista().get_nombre()
+                        << " sigue haciendo desmadre, por lo que "
+                        << user1.get_guardia().get_nombre()
+                        << " le pide ayuda a "
+                        << user1.get_protagonista().get_nombre()
+                        << " para controlar al borracho. Ambos suben "
+                        << " al cuarto de "
+                        << user1.get_antagonista().get_nombre()
+                        << " para bajarlo de su habitacion y calmarlo "
+                        << "en una de las terrazas del edificio. >----"
+                        << std::endl;
+
+                    std::cout << user1.get_protagonista().get_nombre()
+                              << ", " << user1.get_antagonista().get_nombre()
+                              << " y " << user1.get_guardia().get_nombre()
+                              << " se dirigen hacia la terraza interina pequena. "
+                              << "Aqui, " << user1.get_antagonista().get_nombre()
+                              << " se pone agresivo y empieza atacar a "
+                              << user1.get_protagonista().get_nombre()
                               << std::endl;
+
+                    std::cout << "Deseas defenderte? (S / N) ";
+                    std::cin >> choice_3;
+
+                    if (choice_3 == 'S' || choice_3 == 's')
+                    {
+                        std::cout << std::endl;
+                    }
+                    else
+                    {
+                        std::cout << user1.get_protagonista().get_nombre()
+                                  << " ha decidido no defenderse. "
+                                  << "Por lo que ha sido noqueado por "
+                                  << user1.get_antagonista().get_nombre()
+                                  << std::endl;
+
+                        user1.get_protagonista().set_vida(0);
+                        std::cout << "La vida de "
+                                  << user1.get_protagonista().get_nombre()
+                                  << " ha llegado a "
+                                  << user1.get_protagonista().get_vida()
+                                  << "Por lo que GAME OVER" << std::endl;
+
+                        // limpiando la memoria utiiizda
+                        user1.elimina_personajes_todos();
+                    } // fin del condicional de choice_3
 
                     // agrega nuevos NPC a la historia,
                     // son utilizados en el desarrollo de la historia
-                    user1.agrega_npc("Almu", "Mala Suerte");
+                    user1.agrega_npc("Dena", "Mala Suerte");
                     user1.agrega_npc("Turbina", "Dormir como nunca");
-                    user1.agrega_npc("El Doc", "A mimir");
-                    user1.agrega_npc("Jorge", "Desinteres");
+                    user1.agrega_npc("Nitales", "Desinteres");
 
                     user1.elimina_personajes_todos();
-                }
+                } // fin del condicional de choice_2
             }
             else
             {
@@ -332,7 +402,7 @@ int main()
 
                 // limpiando la memoria utiiizda
                 user1.elimina_personajes_todos();
-            }
+            } // fin del condicional de choice_1
             break;
 
         case 2:
@@ -344,12 +414,15 @@ int main()
             // muestra todos los personajes de la historia
             // agregando los NPC que se generan al final de la historia
 
+            std::cout << "Muestra los BASE STATS de los personajes" << std::endl;
+
             // creando & mostrando todos los personajes
             user1.crea_personaje();
-            user1.agrega_npc("Almu", "Mala Suerte");
+            user1.agrega_npc("Dena", "Mala Suerte");
             user1.agrega_npc("Turbina", "Dormir como nunca");
             user1.agrega_npc("El Doc", "A mimir");
-            user1.agrega_npc("Jorge", "Desinteres");
+            user1.agrega_npc("The Cooler Dan", "Fuga");
+            user1.agrega_npc("Nitales", "Desinteres");
 
             // mostrando los personajes
             user1.muestra_personajes();
@@ -360,7 +433,6 @@ int main()
 
         case 4:
             std::cout << "Se ha salido con exito!" << std::endl;
-            user1.elimina_personajes_todos(); // limpiando la memoria utilizada
             running = false;
             break;
 

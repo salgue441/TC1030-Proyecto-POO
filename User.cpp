@@ -30,11 +30,15 @@ std::string User::get_direccion() { return direccion; }
 void User::set_password(std::string password) { contrasena = password; }
 std::string User::get_password() { return contrasena; }
 
-Protagonista User::get_protagonista() { return *(Protagonista *)personajes[0]; }
-Antagonista User::get_antagonista() { return *(Antagonista *)personajes[1]; }
-Guardia User::get_guardia() { return *(Guardia *)personajes[2]; }
-// para que el arreglo empiece 0
-NPC User::get_npc(int iden) { return *(NPC *)personajes[iden + 3]; }
+/*
+Son referencias para no generar una copia del objeto y modificar los valores
+existentes de la clase. En get_npc() se hace un iden + 3 para empezar a contar
+los NPC generados desde 0 y no desde la posicion 3.
+*/
+Protagonista &User::get_protagonista() { return *(Protagonista *)personajes[0]; }
+Antagonista &User::get_antagonista() { return *(Antagonista *)personajes[1]; }
+Guardia &User::get_guardia() { return *(Guardia *)personajes[2]; }
+NPC &User::get_npc(int iden) { return *(NPC *)personajes[iden + 3]; }
 
 /* ---- Funciones ---- */
 /*
