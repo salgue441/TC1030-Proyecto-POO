@@ -544,6 +544,22 @@ int main()
                                   << user1.get_antagonista().get_nombre()
                                   << " se retira a su habitacion."
                                   << std::endl;
+
+                        std::cout << std::endl; // break line
+
+                        std::cout << "----< En este momento, la paz vuelve"
+                                  << " a Jabitee. >----"
+                                  << std::endl
+                                  << user1.get_protagonista().get_nombre()
+                                  << " se va a su habitacion a dormir y "
+                                  << user1.get_guardia().get_nombre()
+                                  << " regresa a su puesto."
+                                  << "Al llegar cada uno a su respectivo puesto, "
+                                  << " el juego se ha terminado"
+                                  << std::endl;
+
+                        std::cout << std::endl; // break line
+                        std::cout << "GAMEOVER" << std::endl;
                     }
                     else
                     {
@@ -566,7 +582,7 @@ int main()
 
                     } // fin del condicional de choice_3
 
-                    // limpiando la memoria
+                    // limpiando la memoria utilizada
                     user1.elimina_personajes_todos();
                 } // fin del condicional de choice_2
             }     // fin del condicional de choice_1
@@ -718,7 +734,7 @@ params: no recibe parametros
 void show_credits()
 {
     std::cout << "Author: Carlos Salguero"
-              << "Director: Carlos Salguero"
-              << "Writers: Carlos Salguer"
+              << "\nDirector: Carlos Salguero"
+              << "\nWriters: Carlos Salguero"
               << std::endl;
 }
