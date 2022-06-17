@@ -21,6 +21,7 @@ la libreria correspondiente para sleep() y no se necesita definir NOMINMAX
 void menu();
 void progress_bar();
 void mostrar_indicaciones();
+void show_credits();
 
 int main()
 {
@@ -526,6 +527,23 @@ int main()
                         std::cout << "----< Volviendo a la historia"
                                   << " principal >----"
                                   << std::endl;
+
+                        std::cout << "Llega la policia a Jabitee, "
+                                  << " hablan un rato con "
+                                  << user1.get_guardia().get_nombre()
+                                  << " y " << user1.get_antagonista().get_nombre()
+                                  << ". Despues de unas preguntas, la policia se "
+                                  << " retira del lugar."
+                                  << std::endl;
+
+                        std::cout << "A las 4 AM, "
+                                  << user1.get_guardia().get_nombre()
+                                  << " logra calmar a "
+                                  << user1.get_antagonista().get_nombre()
+                                  << ". Al final, "
+                                  << user1.get_antagonista().get_nombre()
+                                  << " se retira a su habitacion."
+                                  << std::endl;
                     }
                     else
                     {
@@ -590,7 +608,11 @@ int main()
             user1.elimina_personajes_todos();
             break;
 
-        case 4:
+        case 4: // show credits
+            show_credits();
+            break;
+
+        case 5:
             std::cout << "Se ha salido con exito!" << std::endl;
             running = false;
             break;
@@ -610,7 +632,8 @@ void menu()
 {
     std::cout << "\nMenu principal";
     std::cout << "\n1. Iniciar juego \n2. Mostrar indicaciones"
-              << "\n3. Mostrar personajes \n4. Salir del programa"
+              << "\n3. Mostrar personajes \n4. Show Credits"
+              << "\n5. Salir del programa"
               << std::endl;
 }
 
@@ -685,5 +708,17 @@ void mostrar_indicaciones()
               << " con el texto normal al usuario. Son utilizados para mostrar"
               << " stats cambiantes de los diferentes personajes."
               << std::endl
+              << std::endl;
+}
+
+/*
+Se encarga de mostrar los creditos del programa.
+params: no recibe parametros
+*/
+void show_credits()
+{
+    std::cout << "Author: Carlos Salguero"
+              << "Director: Carlos Salguero"
+              << "Writers: Carlos Salguer"
               << std::endl;
 }
