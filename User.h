@@ -25,7 +25,6 @@ public:
     /* ---- funciones ---- */
     void crea_personaje();
     void muestra_personajes();
-    void actualizar_datos(User &);
 
     // composicion
     void agrega_guardia(std::string, double, int, std::string, double, int,

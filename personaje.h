@@ -36,8 +36,7 @@ public:
 
 protected:
     std::string nombre, habilidad;
-    double ataque, danio_habilidad;
-    int defensa, vida = 100;
+    int ataque, danio_habilidad, defensa, vida = 100;
 };
 
 #endif //! PERSONAJE_H

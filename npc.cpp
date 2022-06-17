@@ -14,21 +14,10 @@ los indices aleatorios.
 params: no recibe parametros
 return: el indice aleatorio generado
 */
-std::string NPC::pick_random_tip()
+void NPC::pick_random_tip()
 {
-    return tips_vec[rand() % tips_len];
-}
-
-/*
-Se encarga de mostrar el tip aleatorio en la consola. Esta funcion
-sirve para mostrar tips al usuario al momento de jugar el videojuego.
-params: no recibe parametros
-return:
-*/
-std::string NPC::dar_tips()
-{
-    std::string new_tip;
-    return new_tip;
+    for (int i = 0; i < 7; i++)
+        std::cout << i << ". " << tips_arr[i] << std::endl;
 }
 
 /*
