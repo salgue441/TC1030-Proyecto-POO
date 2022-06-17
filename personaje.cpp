@@ -61,12 +61,11 @@ params:
     - personaje_atacante: referencia a un objeto de tipo personaje. Es el
         objeto que hace el danio.
 */
-void Personaje::ataca_personaje(Personaje &atacante, Personaje &receptor)
+void Personaje::ataca_personaje(Personaje &receptor)
 {
     double danio_total;
 
-    danio_total = atacante.get_ataque() -
-                  receptor.get_vida();
+    danio_total = ataque - receptor.get_vida();
 
     receptor.set_vida(danio_total);
 }
