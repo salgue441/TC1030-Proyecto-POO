@@ -7,7 +7,7 @@ token.txt
 # el output generado no es necesario en github
 a.out
 
-# main es el archivo de debugging generado al hacer debugging en el codigo
+# main es el archivo de debugging 
 main
 
 # contiene el archivo .docx con el enlace del repositorio
