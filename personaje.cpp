@@ -69,7 +69,7 @@ void Personaje::ataca_personaje(Personaje &receptor)
 
     receptor.set_vida(danio_total);
 
-    if (receptor.get_vida() < 0)
+    if (receptor.get_vida() <= 0)
         receptor.set_vida(0);
 }
 

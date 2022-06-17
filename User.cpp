@@ -51,7 +51,7 @@ void User::crea_personaje()
 {
     personajes[id] = new Protagonista("Nando", 75, 100, "Patada", 39, 67, 100);
     id++;
-    personajes[id] = new Antagonista("Berto", 15, 100, "Mala Copa", 12, 30, 5);
+    personajes[id] = new Antagonista("Berto", 10, 100, "Mala Copa", 12, 30, 5);
     id++;
     personajes[id] = new Guardia("Claudia", 30, 100, "Llamar a poli", 0, 75, "Pedir taxi", 0);
     id++;

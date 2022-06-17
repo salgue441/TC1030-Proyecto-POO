@@ -373,8 +373,8 @@ int main()
                                   << user1.get_antagonista().get_nombre()
                                   << std::endl;
 
-                        // El antagonista le pega 7 veces a el protagonista
-                        for (int i = 0; i < 5; i++)
+                        // El antagonista le pega 9 veces al protagonista
+                        for (int i = 0; i <= 9; i++)
                             user1.get_antagonista().ataca_personaje(user1.get_protagonista());
 
                         // user1.get_protagonista().set_vida(0);
@@ -383,7 +383,7 @@ int main()
                             << user1.get_protagonista().get_nombre()
                             << " ha llegado a "
                             << user1.get_protagonista().get_vida()
-                            << "Por lo que GAME OVER" << std::endl;
+                            << ", por lo que GAME OVER" << std::endl;
 
                         // limpiando la memoria utiiizda
                         user1.elimina_personajes_todos();
