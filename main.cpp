@@ -238,7 +238,13 @@ int main()
                               << user1.get_antagonista().get_nombre()
                               << " sigue tomando."
                               << " >----" << std::endl;
+
                     user1.get_antagonista().set_nivel_embriaguez(50);
+                    std::cout << "(" << user1.get_antagonista().get_nombre()
+                              << " su nuevo nivel de embriaguez es: "
+                              << user1.get_antagonista().get_nivel_embriaguez()
+                              << ")"
+                              << std::endl;
 
                     std::cout << "Despues de un rato, "
                               << user1.get_protagonista().get_nombre()
@@ -266,6 +272,8 @@ int main()
                               << " empieza a bendecir las paredes de la cocina"
                               << " y del comedor con el Whiskey. "
                               << std::endl;
+
+                    std::cout << user1.get_antagonista().bendecir_el_lugar();
 
                     std::cout << "Al ver esto, "
                               << user1.get_protagonista().get_nombre()
@@ -377,7 +385,7 @@ int main()
                     if (choice_3 == 'S' || choice_3 == 's')
                     {
                         std::cout << std::endl; // break line
-                        std::cout << "----< Ha iniciado una pelea entre"
+                        std::cout << "----< A las 3 AM, ha iniciado una pelea entre"
                                   << user1.get_protagonista().get_nombre()
                                   << " y " << user1.get_antagonista().get_nombre()
                                   << ". De lejos, "
@@ -457,6 +465,29 @@ int main()
                                   << user1.get_protagonista().get_nombre()
                                   << " lo mantiene en el suelo hasta que se calma."
                                   << std::endl;
+
+                        // Agregando los nuevos NPC de la historia
+                        user1.agrega_npc("Dena", "Mala Suerte");
+                        user1.agrega_npc("Turbina", "Dormir como nunca");
+
+                        std::cout << "----< En el mismo momento que "
+                                  << user1.get_protagonista().get_nombre()
+                                  << " y "
+                                  << user1.get_antagonista().get_nombre()
+                                  << "pelean, "
+                                  << user1.get_npc(4).get_nombre() << " y "
+                                  << user1.get_npc(5).get_nombre()
+                                  << " vuelven de una peda en Piruletas Quinto"
+                                  << " >----"
+                                  << std::endl;
+
+                        std::cout << user1.get_npc(4).get_nombre() << " y "
+                                  << user1.get_npc(5).get_nombre()
+                                  << " tocan el timbre pero nadie responde, "
+                                  << "por lo que llaman a "
+                                  << user1.get_npc(1).get_nombre()
+                                  << " para que abtra la puerta y los deje entrar"
+                                  << std::endl;
                     }
                     else
                     {
@@ -470,7 +501,6 @@ int main()
                         for (int i = 0; i <= 9; i++)
                             user1.get_antagonista().ataca_personaje(user1.get_protagonista());
 
-                        // user1.get_protagonista().set_vida(0);
                         std::cout
                             << "La vida de "
                             << user1.get_protagonista().get_nombre()
@@ -478,14 +508,8 @@ int main()
                             << user1.get_protagonista().get_vida()
                             << ", por lo que GAME OVER" << std::endl;
 
-                        // limpiando la memoria utiiizda
-                        user1.elimina_personajes_todos();
                     } // fin del condicional de choice_3
 
-                    // agrega nuevos NPC a la historia,
-                    // son utilizados en el desarrollo de la historia
-                    user1.agrega_npc("Dena", "Mala Suerte");
-                    user1.agrega_npc("Turbina", "Dormir como nunca");
                     user1.agrega_npc("Nitales", "Desinteres");
 
                     user1.elimina_personajes_todos();

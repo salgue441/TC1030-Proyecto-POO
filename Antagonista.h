@@ -17,7 +17,7 @@ public:
 
     /* ---- Funciones ---- */
     void danio_agregado(Antagonista &);
-    std::string bendecir_el_lugar(Antagonista &);
+    std::string bendecir_el_lugar();
     void invitar_a_tomar();
     void tomar(double, Antagonista &);
     std::string muestra_datos();

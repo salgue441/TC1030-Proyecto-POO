@@ -29,7 +29,7 @@ void Antagonista::danio_agregado(Antagonista &ant)
 
     if (ant.get_nivel_embriaguez() > 40)
     {
-        nuevo_total = ant.get_ataque() * 10;
+        nuevo_total = ataque * 10;
         ant.set_ataque(nuevo_total);
     }
 }
@@ -38,7 +38,7 @@ void Antagonista::danio_agregado(Antagonista &ant)
 Se encarga de bendecir el lugar de residencia
 params: no recibe parametros
 */
-std::string Antagonista::bendecir_el_lugar(Antagonista &ant)
+std::string Antagonista::bendecir_el_lugar()
 {
     return "El antagonista ha bendecido el lugar";
 }
