@@ -74,18 +74,6 @@ void Personaje::ataca_personaje(Personaje &receptor)
 }
 
 /*
-Se encarga de mejorar el ataque de los personajes en un unico instante.
-params: no recibe parametros
-*/
-void Personaje::ataque_especial(Personaje &receptor)
-{
-    double multiplicador_especial = 3, ataque_unico;
-    ataque_unico = ataque * multiplicador_especial;
-
-    receptor.set_ataque(ataque_unico);
-}
-
-/*
 Se encarga de visualizar todos los datos del objeto personaje seleccionado.
 params:
     - personaje: referencia de objeto de tipo Personaje.
@@ -105,13 +93,4 @@ std::string Personaje::muestra_datos()
           << std::endl;
 
     return datos.str();
-}
-
-void Personaje::ayudar(Personaje &ayudado)
-{
-    int multiplier = 0.10;
-    double ataque_ayuda;
-
-    ataque_ayuda = ataque * multiplier;
-    ayudado.set_ataque(ataque_ayuda);
 }
