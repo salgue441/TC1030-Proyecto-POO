@@ -65,9 +65,12 @@ void Personaje::ataca_personaje(Personaje &receptor)
 {
     double danio_total;
 
-    danio_total = ataque - receptor.get_vida();
+    danio_total = abs(ataque - receptor.get_vida());
 
     receptor.set_vida(danio_total);
+
+    if (receptor.get_vida() < 0)
+        receptor.set_vida(0);
 }
 
 /*
@@ -104,11 +107,11 @@ std::string Personaje::muestra_datos()
     return datos.str();
 }
 
-void Personaje::ayudar(Personaje &ayuda, Personaje &ayudado)
+void Personaje::ayudar(Personaje &ayudado)
 {
     int multiplier = 0.10;
     double ataque_ayuda;
 
-    ataque_ayuda = ayuda.get_ataque() * multiplier;
+    ataque_ayuda = ataque * multiplier;
     ayudado.set_ataque(ataque_ayuda);
 }

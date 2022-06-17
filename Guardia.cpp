@@ -43,7 +43,7 @@ void Guardia::pedir_ayuda(Personaje &protagonista, Personaje &guardia)
     std::cout << "Deseas ayudar (S/N)?" << std::endl;
 
     if (op_ayuda == 'S' || op_ayuda == 's')
-        protagonista.ayudar(protagonista, guardia);
+        protagonista.ayudar(guardia);
     else
         std::cout << "Has decidido no ayudar" << std::endl;
 }

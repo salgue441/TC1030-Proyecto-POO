@@ -34,7 +34,7 @@ public:
     void ataca_personaje(Personaje &);
     void ataque_especial(Personaje &);
     virtual std::string muestra_datos() = 0;
-    void ayudar(Personaje &, Personaje &);
+    void ayudar(Personaje &);
 
 protected:
     std::string nombre, habilidad;
