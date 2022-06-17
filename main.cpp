@@ -83,8 +83,16 @@ int main()
                       << " de la cancion Norwegian Reggaeton y otros temazos. "
                       << std::endl;
 
+            std::cout << std::endl; // break line
             // aumenta el nivel de embriaguez del antagonista
             user1.get_antagonista().set_nivel_embriaguez(15);
+            std::cout << "(" << user1.get_antagonista().get_nombre()
+                      << " su nuevo nivel de embriaguez es: "
+                      << user1.get_antagonista().get_nivel_embriaguez()
+                      << ")"
+                      << std::endl;
+
+            std::cout << std::endl; // break line
 
             std::cout
                 << user1.get_antagonista().get_nombre()
@@ -149,11 +157,13 @@ int main()
                 << " se pregunta si irse a \ndormir o seguir jugando."
                 << std::endl;
 
+            std::cout << std::endl; // break line
             std::cout << "Seguir jugando (S/N)? ";
             std::cin >> choice_1;
 
             if (choice_1 == 'S' || choice_1 == 's')
             {
+                std::cout << std::endl; // break line
                 std::cout << user1.get_protagonista().get_nombre()
                           << " continuo jugando Destiny por 2 horas"
                           << std::endl;
@@ -189,11 +199,13 @@ int main()
                           << " no le gusta el Whiskey)"
                           << std::endl;
 
+                std::cout << std::endl; // break line
                 std::cout << "\nDeseas ir a tomar al rooftop (S/N)? ";
                 std::cin >> choice_2;
 
                 if (choice_2 == 'S' || choice_2 == 's')
                 {
+                    std::cout << std::endl; // break line
                     std::cout << user1.get_protagonista().get_nombre()
                               << " ha decidido ir a tomar al rooftop"
                               << " con "
@@ -358,12 +370,93 @@ int main()
                               << user1.get_protagonista().get_nombre()
                               << std::endl;
 
+                    std::cout << std::endl; // break line
                     std::cout << "Deseas defenderte? (S / N) ";
                     std::cin >> choice_3;
 
                     if (choice_3 == 'S' || choice_3 == 's')
                     {
+                        std::cout << std::endl; // break line
+                        std::cout << "----< Ha iniciado una pelea entre"
+                                  << user1.get_protagonista().get_nombre()
+                                  << " y " << user1.get_antagonista().get_nombre()
+                                  << ". De lejos, "
+                                  << user1.get_guardia().get_nombre()
+                                  << " observa de lejos la pelea >----" << std::endl;
                         std::cout << std::endl;
+
+                        std::cout << user1.get_antagonista().get_nombre()
+                                  << " ataca a "
+                                  << user1.get_protagonista().get_nombre()
+                                  << std::endl;
+
+                        user1.get_antagonista().ataca_personaje(user1.get_protagonista());
+                        std::cout << "(La vida del protagonista es de: "
+                                  << user1.get_protagonista().get_vida() << ")"
+                                  << std::endl;
+
+                        std::cout << std::endl; // break line
+
+                        std::cout << "En defensa, "
+                                  << user1.get_protagonista().get_nombre()
+                                  << " ataca a "
+                                  << user1.get_antagonista().get_nombre()
+                                  << std::endl;
+
+                        user1.get_protagonista().ataca_personaje(user1.get_antagonista());
+                        std::cout << "(La vida del antagonista es de: "
+                                  << user1.get_protagonista().get_vida() << ")"
+                                  << std::endl;
+
+                        std::cout << std::endl; // break line
+
+                        std::cout << "----< Siguen atacandose por un rato >----" << std::endl;
+
+                        for (int i = 0; i < 5; i++)
+                        {
+                            user1.get_antagonista().ataca_personaje(user1.get_protagonista());
+                            std::cout << "(La vida del "
+                                      << user1.get_protagonista().get_nombre()
+                                      << " es de: "
+                                      << user1.get_protagonista().get_vida() << ")"
+                                      << std::endl;
+
+                            user1.get_protagonista().ataca_personaje(user1.get_antagonista());
+                            std::cout << "(La vida del "
+                                      << user1.get_antagonista().get_nombre()
+                                      << " es de : "
+                                      << user1.get_protagonista().get_vida()
+                                      << ")"
+                                      << std::endl;
+                        }
+
+                        std::cout << std::endl; // break line
+
+                        std::cout << "En este punto, "
+                                  << user1.get_protagonista().get_nombre()
+                                  << " ha decido que ya no quiere pelear, por lo que aplica a"
+                                  << user1.get_antagonista().get_nombre()
+                                  << " una patada para tumbarlo y mantenerlo quieto."
+                                  << std::endl;
+
+                        // patada del protagonista
+                        user1.get_protagonista().ataca_personaje(user1.get_antagonista());
+                        std::cout << "(La vida del "
+                                  << user1.get_antagonista().get_nombre()
+                                  << " es de : "
+                                  << user1.get_protagonista().get_vida()
+                                  << ")"
+                                  << std::endl;
+
+                        std::cout << std::endl;
+
+                        std::cout << user1.get_antagonista().get_nombre() << " intenta escapar"
+                                  << " de la llave de "
+                                  << user1.get_protagonista().get_nombre()
+                                  << " pero no puede. "
+                                  << user1.get_protagonista().get_nombre()
+                                  << " lo mantiene en el suelo hasta que se calma."
+                                  << std::endl;
                     }
                     else
                     {
@@ -523,6 +616,13 @@ void mostrar_indicaciones()
     std::cout << "Los indicadores '----< >----' muestran el paso del"
               << " tiempo, comentarios generales o las diferentes perspectivas"
               << " de los peresonajes. "
+              << std::endl
+              << std::endl;
+
+    std::cout << "Los indicadores '()' son utilizados para mostrar"
+              << " informacion relevante al usuario y para no confundir"
+              << " con el texto normal al usuario. Son utilizados para mostrar"
+              << " stats cambiantes de los diferentes personajes."
               << std::endl
               << std::endl;
 }
