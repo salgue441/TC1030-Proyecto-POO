@@ -479,6 +479,14 @@ int main()
                                   << " lo mantiene en el suelo hasta que se calma."
                                   << std::endl;
 
+                        std::cout << "En este instante, "
+                                  << user1.get_guardia().get_nombre()
+                                  << " llama a la policia"
+                                  << std::endl;
+
+                        user1.get_guardia().llamar_a_policia();
+                        std::cout << "La llamada continua por 7 minutos" << std::endl;
+
                         // Agregando los nuevos NPC de la historia
                         user1.agrega_npc("Dena", "Mala Suerte");
                         user1.agrega_npc("Turbina", "Dormir como nunca");
@@ -511,7 +519,12 @@ int main()
                                   << user1.get_npc(6).get_nombre()
                                   << " pide a "
                                   << user1.get_guardia().get_nombre()
-                                  << " que le pida un taxi. "
+                                  << " que le pida un taxi. >----"
+                                  << std::endl;
+
+                        std::cout << std::endl; // break line
+                        std::cout << "----< Volviendo a la historia"
+                                  << " principal >----"
                                   << std::endl;
                     }
                     else
