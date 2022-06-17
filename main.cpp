@@ -328,30 +328,43 @@ int main()
                               << " se retiran de la habitacion.)"
                               << std::endl;
 
+                    // disminuye el nivel de paciencia del protagonista
+                    user1.get_protagonista().set_paciencia(50);
+                    std::cout << "(El nivel de paciencia de "
+                              << user1.get_protagonista().get_nombre()
+                              << "es de "
+                              << user1.get_protagonista().get_paciencia()
+                              << ")"
+                              << std::endl;
+
                     std::cout << std::endl; // break line
 
                     // agrega nuevos NPCs
                     user1.agrega_npc("El Doc", "A mimir");
                     user1.agrega_npc("The Cooler Dan", "Fuga");
 
-                    std::cout << "----< Perspectiva del Doc >----" << std::endl;
-                    std::cout << user1.get_npc(2).get_nombre()
-                              << " escucha un escandalo en el pasillo. "
+                    std::cout << "----< Perspectiva del "
                               << user1.get_npc(2).get_nombre()
-                              << " escucho que "
-                              << user1.get_antagonista().get_nombre()
-                              << " buscaba a "
-                              << user1.get_npc(3).get_nombre()
-                              << " y le decia \"Are you here or are you in "
-                              << "la culpable? \""
-                              << "Tambien, escucho como "
-                              << user1.get_antagonista().get_nombre()
-                              << " golpeaba su puerta. Tambien escucho a "
-                              << user1.get_protagonista().get_nombre() << " y "
-                              << user1.get_guardia().get_nombre()
-                              << " hablar con "
-                              << user1.get_antagonista().get_nombre()
-                              << " por 40 minutos." << std::endl;
+                              << " >----"
+                              << std::endl;
+                    std::cout
+                        << user1.get_npc(2).get_nombre()
+                        << " escucha un escandalo en el pasillo. "
+                        << user1.get_npc(2).get_nombre()
+                        << " escucho que "
+                        << user1.get_antagonista().get_nombre()
+                        << " buscaba a "
+                        << user1.get_npc(3).get_nombre()
+                        << " y le decia \"Are you here or are you in "
+                        << "la culpable? \""
+                        << "Tambien, escucho como "
+                        << user1.get_antagonista().get_nombre()
+                        << " golpeaba su puerta. Tambien escucho a "
+                        << user1.get_protagonista().get_nombre() << " y "
+                        << user1.get_guardia().get_nombre()
+                        << " hablar con "
+                        << user1.get_antagonista().get_nombre()
+                        << " por 40 minutos." << std::endl;
 
                     std::cout << std::endl; // break line
 
@@ -469,6 +482,8 @@ int main()
                         // Agregando los nuevos NPC de la historia
                         user1.agrega_npc("Dena", "Mala Suerte");
                         user1.agrega_npc("Turbina", "Dormir como nunca");
+
+                        std::cout << std::endl; // break line
 
                         std::cout << "----< En el mismo momento que "
                                   << user1.get_protagonista().get_nombre()
