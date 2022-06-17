@@ -624,11 +624,24 @@ int main()
             user1.elimina_personajes_todos();
             break;
 
-        case 4: // show credits
+        case 4:
+            // show credits
             show_credits();
             break;
 
         case 5:
+            // muestra tips
+            std::cout << "Los tips del videojuego son los siguientes: " << std::endl;
+
+            // crea todos los personajes para mostrar los tips de un NPC
+            user1.crea_personaje();
+            user1.get_npc(0).pick_random_tip();
+
+            // limpiando la memoria
+            user1.elimina_personajes_todos();
+            break;
+
+        case 6: // salir del programa
             std::cout << "Se ha salido con exito!" << std::endl;
             running = false;
             break;
@@ -649,7 +662,7 @@ void menu()
     std::cout << "\nMenu principal";
     std::cout << "\n1. Iniciar juego \n2. Mostrar indicaciones"
               << "\n3. Mostrar personajes \n4. Show Credits"
-              << "\n5. Salir del programa"
+              << "\n5. Dar tips \n6. Salir del programa"
               << std::endl;
 }
 
